@@ -14,20 +14,15 @@ export const Navbar = () => {
     };
 
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-
-						<button onClick={handleLogout}>Cerrar Sesión</button>
-					</Link>
-					
+		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container">
+                <span className="navbar-brand">MyAuthApp</span>
+				<div>
+					<button className="btn btn-outline-light" onClick={() => navigate("/")} > Inicio </button>
+				<button className="btn btn-outline-light ms-2" onClick={handleLogout}>Cerrar Sesión</button>
 				</div>
-			</div>
-		</nav>
+                
+            </div>
+        </nav>
 	);
 };

@@ -22,10 +22,45 @@ export const Signup = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-            <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Contraseña" />
-            <button type="submit">Registrar</button>
-        </form>
+        <div className="container mt-5">
+            <h1 className="text-center mb-4">¡Únete a MyAuthApp! </h1>
+            <form
+                className="mx-auto p-4 border rounded bg-light shadow"
+                style={{ maxWidth: "400px" }}
+                onSubmit={handleSubmit}
+            >
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">
+                        Correo Electrónico
+                    </label>
+                    <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        placeholder="Tu correo"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="password" className="form-label">
+                        Contraseña
+                    </label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        placeholder="Tu contraseña"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit" className="btn btn-primary w-100">
+                    Registrarse
+                </button>
+            </form>
+        </div>
     );
 };
